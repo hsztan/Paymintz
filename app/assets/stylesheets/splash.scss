@@ -8,6 +8,14 @@ $text-color: #434b54;
   display: flex;
   flex-direction: column;
   align-items: center;
+  .logo {
+    width: 10rem;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
   div {
     width: 100%;
     margin-top: auto;
