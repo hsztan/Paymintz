@@ -38,3 +38,14 @@ a {
 ul {
   list-style: none;
 }
+
+.btn.create {
+  background: transparent;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1rem;
+  border: none;
+  position: absolute;
+  top: 1.1rem;
+  right: 10px;
+}
