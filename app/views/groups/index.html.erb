@@ -1,6 +1,5 @@
 <%= render partial: "shared/navigation", locals: {icon_type:'fa-solid', icon_name: 'arrow-left', title:'CATEGORIES', right:''} %>
 <p style="color: green"><%= notice %></p>
-<h1>Groups</h1>
 <div id="groups">
   <% @groups.each do |group| %>
     <%= render group %>
