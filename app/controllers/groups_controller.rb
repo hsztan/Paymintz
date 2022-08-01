@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :redirect_to_splash, unless: :signed_in?
   before_action :set_group, only: %i[show edit update destroy]
 
   # GET /groups or /groups.json

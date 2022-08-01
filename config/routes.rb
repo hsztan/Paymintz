@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "groups#index"
-  get 'home' => 'splash#splash'
+  get 'home' => 'splash#splash', as: :splash
 end
