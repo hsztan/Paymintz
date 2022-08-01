@@ -1,0 +1,32 @@
+$primary-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+
+.splash {
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    width: 100%;
+    margin-top: auto;
+    p {
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #fff;
+      text-align: center;
+      background-color: $primary-color;
+      padding: 1rem;
+      &.btn--secondary {
+        background-color: #fff;
+        color: $text-color;
+      }
+      a {
+        width: 100%;
+        color: inherit;
+      }
+    }
+  }
+}

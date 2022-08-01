@@ -14,4 +14,27 @@
  *= require_self
  */
 
- @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import "font-awesome";
+
+
+$font-family-base: 'Montserrat', sans-serif;
+$primary-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+}
+
+ul {
+  list-style: none;
+}
