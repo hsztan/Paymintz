@@ -11,6 +11,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
+    @group = Group.find(params[:group_id])
     @payment = Payment.new
   end
 

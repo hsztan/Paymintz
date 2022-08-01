@@ -6,3 +6,6 @@
   <%= link_to "Back to groups", groups_path %>
   <%= button_to "Destroy this group", @group, method: :delete %>
 </div>
+<div>
+  <%= link_to "New Payment", new_group_payment_path(@group), class: 'btn create groups' %>
+</div>
