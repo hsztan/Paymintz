@@ -1,2 +1,2 @@
 <%= render partial: "shared/navigation", locals: {icon_type:'fa-solid', icon_name: 'arrow-left', title: 'NEW PAYMENT', right:''} %>
-<%= render "form", payment: @payment %>
+<%= render partial: "form", locals: {payment: @payment, group: @group} %>
