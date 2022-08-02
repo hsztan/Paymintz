@@ -1,11 +1,10 @@
 <%= render partial: "shared/navigation", locals: {icon_type:'fa-solid', icon_name: 'arrow-left', title:@group.name.upcase, right:''} %>
+<div class="show-actions">
+  <%= link_to "Edit", edit_group_path(@group) %>
+  <%= button_to "Delete", @group, method: :delete %>
+</div>
 <p style="color: green"><%= notice %></p>
 <%= render @group %>
-<div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-  <%= button_to "Destroy this group", @group, method: :delete %>
-</div>
 <div>
   <%= link_to "New Payment", new_group_payment_path(@group), class: 'btn create groups' %>
 </div>

@@ -1,3 +1,8 @@
+$font-family-base: 'Montserrat', sans-serif;
+$primary-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+
 #groups {
   margin: 1rem;
 }
@@ -17,5 +22,29 @@
   }
   img {
     border-radius: 5px;
+  }
+}
+
+.show-actions {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.3rem;
+  background: $secondary-color;
+  color: #fff;
+  a {
+    color: #fff;
+    &:hover {
+      color: $text-color;
+    }
+  }
+  button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-weight: 300;
+    font-size: 1rem;
+    &:hover {
+      color: $text-color;
+    }
   }
 }
