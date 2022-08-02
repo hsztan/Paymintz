@@ -2,10 +2,9 @@
 <p style="color: green"><%= notice %></p>
 <div id="groups">
   <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
+    <%= link_to (group) do %>
+      <%= render group %>
+    <% end %>
   <% end %>
 </div>
 <%= link_to "New Cat.", new_group_path, class: 'btn create groups' %>
