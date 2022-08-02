@@ -12,7 +12,6 @@
   <% if @group.payments.any? %>
     <%= render @group.payments %>
   <% else %>
-    <p>No payments yet.</p>
+    <p class="info">No payments yet.</p>
   <% end %>
 </div>
-    
