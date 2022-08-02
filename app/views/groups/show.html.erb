@@ -8,3 +8,11 @@
 <div>
   <%= link_to "New Payment", new_group_payment_path(@group), class: 'btn create groups' %>
 </div>
+<div id="payments">
+  <% if @group.payments.any? %>
+    <%= render @group.payments %>
+  <% else %>
+    <p>No payments yet.</p>
+  <% end %>
+</div>
+    

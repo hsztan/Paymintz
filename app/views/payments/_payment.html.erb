@@ -1,17 +1,11 @@
-<div id="<%= dom_id payment %>">
-  <p>
-    <strong>User:</strong>
-    <%= payment.user_id %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
+<div id="<%= dom_id payment %>" class="payment">
+  <div class="icon">
+    <img src="https://picsum.photos/90" alt="randy">
+  </div>
+  <div class="info">
     <%= payment.name %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
+  </div>
+  <div class="total">
     <%= payment.amount %>
-  </p>
-
+  </div>
 </div>
