@@ -5,12 +5,12 @@
 </div>
 <%= render @group %>
 <div class="verb">
-  <%= link_to "New Payment", new_group_payment_path(@group), class: 'btn create groups' %>
+  <%= link_to "New Transaction", new_group_payment_path(@group), class: 'btn create groups' %>
 </div>
 <div id="payments">
   <% if @payments.any? %>
     <%= render @payments %>
   <% else %>
-    <p class="info">No payments yet.</p>
+    <p class="info">No transactions yet.</p>
   <% end %>
 </div>

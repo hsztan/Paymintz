@@ -57,6 +57,7 @@ ul {
 }
 
 .btn.create {
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +72,6 @@ ul {
     background-color: $primary-color;
   }
 }
-
 
 .devise-links {
   margin-top: 1rem;
