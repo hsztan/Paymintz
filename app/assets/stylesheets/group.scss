@@ -21,6 +21,10 @@ $text-color: #434b54;
   }
   .total {
     margin-left: auto;
+    color: $text-color;
+  }
+  .info {
+    font-weight: 400;
   }
   img {
     border-radius: 5px;

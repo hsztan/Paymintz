@@ -3,7 +3,8 @@
     <img src="https://picsum.photos/60" alt="randy">
   </div>
   <div class="info">
-    <%= payment.name %>
+    <p><%= payment.name %></p>
+    <p class="date"><%=payment.created_at.strftime('%d %b %Y')%></p>
   </div>
   <div class="total">
     <%= number_to_currency payment.amount %>

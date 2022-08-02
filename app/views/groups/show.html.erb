@@ -1,4 +1,4 @@
-<%= render partial: "shared/navigation", locals: {icon_type:'fa-solid', icon_name: 'arrow-left', title:@group.name.upcase, right:''} %>
+<%= render partial: "shared/navigation", locals: {icon_type:'fa-solid', icon_name: 'arrow-left', title:"TRANSACTIONS", right:''} %>
 <div class="show-actions">
   <%= link_to "Edit", edit_group_path(@group) %>
   <%= button_to "Delete", @group, method: :delete %>
