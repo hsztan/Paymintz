@@ -68,7 +68,7 @@ ul {
   font-size: 1rem;
   border: 1px solid #fff;
   &:hover {
-    color: $text-color;
+    background-color: $primary-color;
   }
 }
 
@@ -96,4 +96,10 @@ ul {
   font-weight: 300;
   opacity: 0.7;
   line-height: 1.4;
+}
+
+.notice, .alert {
+  position: fixed;
+  bottom: 4.6rem;
+  left: 0;
 }

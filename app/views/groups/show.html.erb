@@ -3,7 +3,6 @@
   <%= link_to "Edit", edit_group_path(@group) %>
   <%= button_to "Delete", @group, method: :delete %>
 </div>
-<p style="color: green"><%= notice %></p>
 <%= render @group %>
 <div class="verb">
   <%= link_to "New Payment", new_group_payment_path(@group), class: 'btn create groups' %>
