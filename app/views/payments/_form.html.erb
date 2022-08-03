@@ -16,12 +16,16 @@
   <div>
     <%= form.text_field :amount, placeholder: 'Amount' %>
   </div>
-  <div>
+  <div class="selections">
     <%@groups.each do |group|%>
-      <%= check_box_tag "group_ids[]", group.id, group.id %> <%= group.name %>
+      <div class="selection">
+        <p><%= group.name %></p>
+        <%= check_box_tag "group_ids[]", group.id, group.id %>
+      </div>
     <%end%>
   </div>
-  <div class="verb">
-    <%= form.submit "Create", class: 'btn create' %>
-  </div>
+</div>
+<div class="verb">
+  <%= form.submit "Create", class: 'btn create' %>
+</div>
 <% end %>

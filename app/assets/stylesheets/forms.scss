@@ -1,0 +1,50 @@
+$primary-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+
+.new_user, .new_group, .new_payment, .field {
+  label: {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  input {
+    border: 0.5px solid #ccc;
+    background: #fff;
+    padding: 8px;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #ccc;
+    }
+  }
+  .selections {
+    padding-left: 2rem;
+    margin-top: 1rem;
+    gap: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    .selection {
+      display: flex;
+      justify-content: space-between;
+      p {
+        width: 30%;
+        font-size: 1rem;
+        font-weight: 300;
+        color: $text-color;
+      }
+      input {
+        width: 50%;
+        margin-right: auto;
+      }
+    }
+  }
+  
+}
