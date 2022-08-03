@@ -29,6 +29,24 @@ $text-color: #434b54;
       font-size: 0.8rem;
     }
   }
+  .payment-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 40%;
+    color: $text-color;
+    button {
+      background: none;
+      border: none;
+    }
+    i {
+      margin-left: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
 
   .total {
     font-weight: 300;

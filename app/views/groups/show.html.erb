@@ -9,7 +9,9 @@
 </div>
 <div id="payments">
   <% if @payments.any? %>
-    <%= render @payments %>
+    <% @payments.each do |payment| %>
+      <%= render partial: "payments/payment", locals: {payment: payment, group: @group} %>
+    <% end %>
   <% else %>
     <p class="info">No transactions yet.</p>
   <% end %>
