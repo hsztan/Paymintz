@@ -25,8 +25,8 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(payment_params)
     @payment.user = current_user
     @group = Group.find(params[:group_id])
-    if params[:group_ids]
-      params[:group_ids].each do |group_id|
+    if params[:grp_ids]
+      params[:grp_ids].each do |group_id|
         group = Group.find(group_id)
         group.payments << @payment
       end
@@ -37,7 +37,7 @@ class PaymentsController < ApplicationController
 
     respond_to do |format|
       if @payment.save
-        format.html { render :show, notice: 'Payment was successfully created.' }
+        format.html { redirect_to group_path(@group), notice: 'Payment was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
