@@ -30,7 +30,7 @@ class PaymentsController < ApplicationController
         group.payments << @payment
       end
     else
-      redirect_to new_group_payment_path(@group)
+      redirect_to new_group_payment_path(@group), flash: { alert: 'You must select at least one category.' }
       return
     end
 
