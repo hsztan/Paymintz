@@ -20,7 +20,7 @@
     <%@groups.each do |group|%>
       <div class="selection">
         <p><%= group.name %></p>
-        <%= check_box_tag "group_ids[]", group.id, group.id %>
+        <%= check_box_tag "group_ids[]", group.id%>
       </div>
     <%end%>
   </div>
