@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :redirect_to_splash, unless: :signed_in?
+  load_and_authorize_resource
   before_action :set_payment, only: %i[show edit update destroy]
 
   # GET /payments or /payments.json

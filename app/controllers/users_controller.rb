@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :redirect_to_splash, unless: :signed_in?
+  load_and_authorize_resource
   before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users or /users.json
