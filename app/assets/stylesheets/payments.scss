@@ -33,14 +33,13 @@ $text-color: #434b54;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 40%;
+    margin-top: 0.4rem;
     color: $text-color;
     button {
       background: none;
       border: none;
     }
     i {
-      margin-left: 0.5rem;
       cursor: pointer;
       &:hover {
         color: $secondary-color;
@@ -53,6 +52,9 @@ $text-color: #434b54;
     font-size: 0.9rem;
     color: $text-color;
     margin-left: auto;
+    .amount {
+      margin-top: 0.4rem;
+    }
   }
 
   img {

@@ -6,10 +6,10 @@
     <p><%= payment.name %></p>
     <p class="date"><%=payment.created_at.strftime('%d %b %Y')%></p>
   </div>
-  <div class="payment-actions">
-    <%= button_to icon('fa-solid', 'trash'), group_payment_url(group, payment), method: :delete, class: 'btn delete'%>
-  </div>
   <div class="total">
-    <%= number_to_currency payment.amount %>
+    <p class="amount"><%= number_to_currency payment.amount %></p>
+    <div class="payment-actions">
+      <%= button_to icon('fa-solid', 'trash'), group_payment_url(group, payment), method: :delete, class: 'btn delete'%>
+    </div>
   </div>
 </div>
