@@ -13,6 +13,7 @@ class PaymentsController < ApplicationController
   def new
     @group = Group.find(params[:group_id])
     @payment = Payment.new
+    @groups = Group.where(user_id: current_user.id)
   end
 
   # GET /payments/1/edit
@@ -24,6 +25,12 @@ class PaymentsController < ApplicationController
     @payment.user = current_user
     group = Group.find(params[:group_id])
     group.payments << @payment
+    unless params[:group_ids].empty?
+      params[:group_ids].each do |group_id|
+        group = Group.find(group_id)
+        group.payments << @payment
+      end
+    end
 
     respond_to do |format|
       if @payment.save
