@@ -169,5 +169,15 @@ RSpec.describe 'Requirements with with user logged in Categories', type: :system
       expect(page).to have_selector('#payment_amount')
       expect(page).to have_selector('.selection') # at least one group / category
     end
+    it 'takes the user to the category page after submitting the form' do
+      visit groups_path
+      click_link @group.name
+      click_link 'New Transaction'
+      fill_in 'Name', with: 'Test'
+      fill_in 'Amount', with: '100'
+      form_submit = find('input[type="submit"]')
+      form_submit.click
+      expect(page).to have_content(@group.name)
+    end
   end
 end
