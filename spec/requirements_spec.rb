@@ -76,5 +76,10 @@ RSpec.describe 'Requirements with with user logged in', type: :system do
       expect(page).to have_content(@payment.name)
       expect(page).to have_content(@payment.amount)
     end
+    it 'navigate to the new group page' do
+      visit groups_path
+      click_link 'New Category'
+      expect(page).to have_content('NEW CATEGORY')
+    end
   end
 end
