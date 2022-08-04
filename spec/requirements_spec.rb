@@ -64,6 +64,23 @@ RSpec.describe 'Requirements with with user logged in', type: :system do
       visit groups_path
       expect(page).to have_selector('.groups')
     end
+  end
+end
+
+RSpec.describe 'Requirements with with user logged in Categories', type: :system do
+  before do
+    User.destroy_all
+    Group.destroy_all
+    Payment.destroy_all
+    @user = build(:user)
+    @user.skip_confirmation!
+    @user.save!
+    sign_in @user
+    @group = create(:group, user: @user)
+    @payment = create(:payment, user: @user)
+    @group.payments << @payment
+  end
+  context 'categories page' do
     it 'for each category, the user can see the name, icon, and total amount of all transactions' do
       visit groups_path
       expect(page).to have_content(@group.name)
@@ -76,10 +93,33 @@ RSpec.describe 'Requirements with with user logged in', type: :system do
       expect(page).to have_content(@payment.name)
       expect(page).to have_content(@payment.amount)
     end
-    it 'navigate to the new group page' do
+    it 'navigates to the new group page' do
       visit groups_path
       click_link 'New Category'
       expect(page).to have_content('NEW CATEGORY')
+    end
+  end
+end
+
+RSpec.describe 'Requirements with with user logged in Transactions', type: :system do
+  before do
+    User.destroy_all
+    Group.destroy_all
+    Payment.destroy_all
+    @user = build(:user)
+    @user.skip_confirmation!
+    @user.save!
+    sign_in @user
+    @group = create(:group, user: @user)
+    @payment = create(:payment, user: @user)
+    @group.payments << @payment
+  end
+  context 'transactions view' do
+    it 'has a button to add a new transaction' do
+      visit groups_path
+      click_link @group.name
+      click_link 'New Transaction'
+      expect(page).to have_content('NEW TRANSACTION')
     end
   end
 end
