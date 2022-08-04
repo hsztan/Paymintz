@@ -1,6 +1,7 @@
 # Budget App
 
-> The Budget App is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+> A Mobile Web App made with Rails that takes care of your expenses. You can have a record of your expenses by date, category, amount, and others. Has feature and system tests with RSpec and Capybara. Implements authentication with Devise and authorization with CanCanCan. Deployed to Heroku. Uses PostgreSQL and ActiveRecord.
+
 # Live Demo
 For a live demo of the project [click here](https://peaceful-stream-92923.herokuapp.com/).
 Please log in with the following pre-verified credentials:
@@ -8,7 +9,7 @@ Please log in with the following pre-verified credentials:
 - password: 123456
 
 # Live Presentation
-For a live presentation of the project check this [Loom video](https://www.loom.com/share/ca071f9099c74642b253ac685bc25859).
+For a live presentation of the project check this [Loom video](https://www.loom.com/share/c24659ee04ac465fb43d0819e1b7b03d).
 
 ## Getting Started
 
