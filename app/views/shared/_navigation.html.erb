@@ -1,5 +1,5 @@
 <nav>
-  <div class="icon"><%=link_to icon('fa-solid', 'house'), groups_path%> </div>
+  <div class="icon"><%=link_to icon('fa-solid', 'house'), groups_path, id: 'home'%> </div>
   <div class="title"><%=title%></div>
   <div class="icon"><%=button_to icon('fa-solid', 'arrow-right-from-bracket'), destroy_user_session_path, method: :delete %></div>
 </nav>

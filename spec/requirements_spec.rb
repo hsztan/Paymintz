@@ -121,5 +121,42 @@ RSpec.describe 'Requirements with with user logged in Transactions', type: :syst
       click_link 'New Transaction'
       expect(page).to have_content('NEW TRANSACTION')
     end
+    it 'has a button on the nav bar that takes you home' do
+      visit groups_path
+      click_link @group.name
+      click_link 'home'
+      expect(page).to have_content('CATEGORIES')
+    end
+  end
+end
+
+RSpec.describe 'Requirements with with user logged in Categories', type: :system do
+  before do
+    User.destroy_all
+    Group.destroy_all
+    Payment.destroy_all
+    @user = build(:user)
+    @user.skip_confirmation!
+    @user.save!
+    sign_in @user
+    @group = create(:group, user: @user)
+    @payment = create(:payment, user: @user)
+    @group.payments << @payment
+  end
+  context 'add new category page' do
+    it 'has a form the user fills for name and icon both mandatory' do
+      visit new_group_path
+      expect(page).to have_content('NEW CATEGORY')
+      expect(page).to have_selector('#group_name')
+      expect(page).to have_selector('#group_icon')
+    end
+    it 'takes the user to home page after submitting the form' do
+      visit new_group_path
+      fill_in 'Name', with: 'Test'
+      fill_in 'group_icon', with: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+      form_submit = find('input[type="submit"]')
+      form_submit.click
+      expect(page).to have_content('CATEGORIES')
+    end
   end
 end
