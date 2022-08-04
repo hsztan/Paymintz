@@ -90,4 +90,19 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'https://peaceful-stream-92923.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name:      '2c336ab673e7ac',
+    password:       '9aba1da8255694',
+    domain:         'mailtrap.io',
+    address:       'smtp.mailtrap.io',
+    port:          '25',
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end
