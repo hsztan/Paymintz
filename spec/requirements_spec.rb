@@ -14,12 +14,16 @@ RSpec.describe 'Requirements with without user logged in', type: :system do
       visit groups_path
       expect(page).to have_link('SIGN UP')
     end
+    it 'user should not be able to see the groups page if user not logged in' do
+      visit groups_path
+      expect(page).to_not have_selector('.groups')
+    end
   end
 end
 
 RSpec.describe 'Requirements with user logged in', type: :system do
   context 'sign up and log in pages' do
-    it 'user should be able to register in the app with full name, email and password, login into the app using email and password' do
+    it 'user should be able to register and login into the app using email and password' do
       visit new_user_registration_path
       name = Faker::Name.name
       email = Faker::Internet.email
