@@ -8,17 +8,21 @@ $text-color: #434b54;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .logo {
     width: 20rem;
+
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
     }
   }
+
   div {
     width: 100%;
     margin-top: auto;
+
     .btn {
       display: block;
       width: 100%;
@@ -28,6 +32,7 @@ $text-color: #434b54;
       text-align: center;
       background-color: $primary-color;
       padding: 1rem;
+
       &.secondary {
         background-color: #fff;
         color: $text-color;

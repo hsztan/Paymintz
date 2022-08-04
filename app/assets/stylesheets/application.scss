@@ -17,7 +17,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import "font-awesome";
 
-
 $font-family-base: 'Montserrat', sans-serif;
 $primary-color: #3778c2;
 $secondary-color: #5fb523;
@@ -69,6 +68,7 @@ ul {
   font-weight: 300;
   font-size: 1rem;
   border: 1px solid #fff;
+
   &:hover {
     background-color: $primary-color;
   }
@@ -99,7 +99,8 @@ ul {
   line-height: 1.4;
 }
 
-.notice, .alert {
+.notice,
+.alert {
   position: fixed;
   bottom: 4.6rem;
   left: 0;

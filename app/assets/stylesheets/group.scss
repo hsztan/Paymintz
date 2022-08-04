@@ -15,21 +15,25 @@ $text-color: #434b54;
   background-color: #fff;
   margin-bottom: 1rem;
   padding: 10px;
+
   .icon {
     margin-right: auto;
     height: 100%;
   }
+
   .total {
     margin-left: auto;
     color: $text-color;
   }
+
   .info {
     width: 100%;
     font-weight: 400;
   }
+
   img {
     border-radius: 5px;
-    object-fit:scale-down;
+    object-fit: scale-down;
     height: 100%;
     width: auto;
   }
@@ -41,18 +45,22 @@ $text-color: #434b54;
   padding: 0.3rem;
   background: $secondary-color;
   color: #fff;
+
   a {
     color: #fff;
+
     &:hover {
       color: $text-color;
     }
   }
+
   button {
     background: transparent;
     border: none;
     color: #fff;
     font-weight: 300;
     font-size: 1rem;
+
     &:hover {
       color: $text-color;
     }

@@ -25,22 +25,27 @@ $text-color: #434b54;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     .date {
       font-size: 0.8rem;
     }
   }
+
   .payment-actions {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-top: 0.4rem;
     color: $text-color;
+
     button {
       background: none;
       border: none;
     }
+
     i {
       cursor: pointer;
+
       &:hover {
         color: $secondary-color;
       }
@@ -52,13 +57,14 @@ $text-color: #434b54;
     font-size: 0.9rem;
     color: $text-color;
     margin-left: auto;
+
     .amount {
       margin-top: 0.4rem;
     }
   }
 
   img {
-    object-fit:scale-down;
+    object-fit: scale-down;
     height: 100%;
     width: auto;
     border-radius: 5px;
