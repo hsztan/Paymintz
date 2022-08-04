@@ -17,27 +17,38 @@ RSpec.describe 'Requirements with without user logged in', type: :system do
   end
 end
 
-# Rspec.describe 'Requirements with user logged in', type: :system do
-#   context 'sign up and log in pages' do
-#     it 'user should be able to register in the app with full name, email and password' do
-#       visit new_user_registration_path
-#       fill_in 'Name', with: 'John Doe'
-#       fill_in 'Email', with: 'jdoe@gmail.com'
-#       fill_in 'Password', with: 'password'
-#       fill_in 'Password confirmation', with: 'password'
-#       click_button 'Sign up'
-#     end
-#   end
-# end
+RSpec.describe 'Requirements with user logged in', type: :system do
+  context 'sign up and log in pages' do
+    it 'user should be able to register in the app with full name, email and password, login into the app using email and password' do
+      visit new_user_registration_path
+      name = Faker::Name.name
+      email = Faker::Internet.email
+      password = Faker::Internet.password
+      @test_user = build(:user, name:, email:, password:, password_confirmation: password)
+      @test_user.skip_confirmation!
+      fill_in 'Name', with: name
+      fill_in 'Email', with: email
+      fill_in 'Password', with: password
+      fill_in 'user_password_confirmation', with: password
+      form_submit = find('input[type="submit"]')
+      @test_user.skip_confirmation!
+      form_submit.click
+      @test_user.save
+      visit user_session_path
+      fill_in 'Email', with: email
+      fill_in 'Password', with: password
+      form_submit = find('input[type="submit"]')
+      form_submit.click
+      expect(page).to have_content('CATEGORIES')
+    end
+  end
+end
 
 RSpec.describe 'Requirements with with user logged in', type: :system do
   context 'home page (groups page)' do
     before do
       User.destroy_all
-      @user2 = create(:user)
-      @user = User.new(name: 'John Doe', email: 'jdoe@gmail.com', password: 'password',
-                       password_confirmation: 'password')
-      @user.confirmed_at = Time.now
+      @user = build(:user)
       @user.skip_confirmation!
       @user.save!
       sign_in @user
