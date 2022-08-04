@@ -56,10 +56,25 @@ RSpec.describe 'Requirements with with user logged in', type: :system do
       @user.skip_confirmation!
       @user.save!
       sign_in @user
+      @group = create(:group, user: @user)
+      @payment = create(:payment, user: @user)
+      @group.payments << @payment
     end
     it 'when user is logged in, it should display the groups page' do
       visit groups_path
       expect(page).to have_selector('.groups')
+    end
+    it 'for each category, the user can see the name, icon, and total amount of all transactions' do
+      visit groups_path
+      expect(page).to have_content(@group.name)
+      expect(page).to have_content(@group.transactions_total)
+      expect(page).to have_css("img[src=\"#{@group.icon}\"]")
+    end
+    it 'the user can click on the name of a category to see all transactions for that category' do
+      visit groups_path
+      click_link @group.name
+      expect(page).to have_content(@payment.name)
+      expect(page).to have_content(@payment.amount)
     end
   end
 end
