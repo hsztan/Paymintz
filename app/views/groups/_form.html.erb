@@ -11,10 +11,10 @@
   <% end %>
   <div>
     <%= form.label :name, hidden: true %><br/>
-    <%= form.text_field :name, placeholder: 'Category name' %>
+    <%= form.text_field :name, placeholder: 'Category name', required: true %>
   </div>
   <div>
-    <%= form.text_field :icon, placeholder: 'Icon url', value: 'https://picsum.photos/90' %>
+    <%= form.text_field :icon, placeholder: 'Icon url', value: 'https://picsum.photos/90', required: true %>
   </div>
   <div class="verb">
     <%= form.submit "Create", class: 'btn create' %>

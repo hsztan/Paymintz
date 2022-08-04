@@ -3,16 +3,16 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
     <%= f.label :name, hidden: true %><br />
-    <%= f.text_field :name, autofocus: true, placeholder: 'Full name' %>
+    <%= f.text_field :name, autofocus: true, placeholder: 'Full name', required: true %>
   </div>
   <div class="field">
-    <%= f.email_field :email, autofocus: true, placeholder: 'Email' %>
+    <%= f.email_field :email, autofocus: true, placeholder: 'Email', required: true %>
   </div>
   <div class="field">
-    <%= f.password_field :password, placeholder: 'Password' %>
+    <%= f.password_field :password, placeholder: 'Password', required: true %>
   </div>
   <div class="field">
-    <%= f.password_field :password_confirmation, placeholder: 'Confirm password' %>
+    <%= f.password_field :password_confirmation, placeholder: 'Confirm password', required: true %>
   </div>
   <div class="actions verb">
     <%= f.submit "Next", class: 'btn create' %>

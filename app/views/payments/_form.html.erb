@@ -11,10 +11,10 @@
   <% end %>
   <div>
     <%= form.label :name, hidden: true %> <br/>
-    <%= form.text_field :name, placeholder: 'Name' %>
+    <%= form.text_field :name, placeholder: 'Name', required: true %>
   </div>
   <div>
-    <%= form.text_field :amount, placeholder: 'Amount' %>
+    <%= form.number_field :amount, placeholder: 'Amount', required: true %>
   </div>
   <div class="selections">
     <%@groups.each do |grp|%>
