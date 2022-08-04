@@ -159,4 +159,15 @@ RSpec.describe 'Requirements with with user logged in Categories', type: :system
       expect(page).to have_content('CATEGORIES')
     end
   end
+  context 'add a new transaction' do
+    it 'has a form the user fills with name, amount, and category mandatory' do
+      visit groups_path
+      click_link @group.name
+      click_link 'New Transaction'
+      expect(page).to have_content('NEW TRANSACTION')
+      expect(page).to have_selector('#payment_name')
+      expect(page).to have_selector('#payment_amount')
+      expect(page).to have_selector('.selection') # at least one group / category
+    end
+  end
 end
