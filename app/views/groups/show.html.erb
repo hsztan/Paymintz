@@ -1,0 +1,18 @@
+<%= render partial: "shared/navigation", locals: {icon_type:'fa-solid', icon_name: 'arrow-left', title:"TRANSACTIONS", right:''} %>
+<div class="show-actions">
+  <%= link_to "Edit", edit_group_path(@group) %>
+  <%= button_to "Delete", @group, method: :delete %>
+</div>
+<%= render @group %>
+<div class="verb">
+  <%= link_to "New Transaction", new_group_payment_path(@group), class: 'btn create groups' %>
+</div>
+<div id="payments">
+  <% if @payments.any? %>
+    <% @payments.each do |payment| %>
+      <%= render partial: "payments/payment", locals: {payment: payment, group: @group} %>
+    <% end %>
+  <% else %>
+    <p class="info">No transactions yet.</p>
+  <% end %>
+</div>

@@ -1,0 +1,31 @@
+<%= form_with(model: payment, url: group_payments_path(group), class: "new_payment") do |form| %>
+  <% if payment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+      <ul>
+        <% payment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :name, hidden: true %> <br/>
+    <%= form.text_field :name, placeholder: 'Name', required: true %>
+  </div>
+  <div>
+    <%= form.number_field :amount, placeholder: 'Amount', required: true %>
+  </div>
+  <div class="selections">
+    <%@groups.each do |grp|%>
+      <div class="selection">
+        <p><%= grp.name %></p>
+        <%= check_box_tag "grp_ids[]", grp.id, grp.id == group.id  %>
+      </div>
+    <%end%>
+  </div>
+</div>
+<div class="verb">
+  <%= form.submit "Create", class: 'btn create' %>
+</div>
+<% end %>

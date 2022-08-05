@@ -1,0 +1,16 @@
+<%= render partial: "shared/navigation", locals: {icon_type:'fa-solid', icon_name: 'arrow-left', title:'CATEGORIES', right:''} %>
+<p style="color: green"><%= notice %></p>
+<div id="groups">
+  <% if @groups.any? %>
+    <% @groups.each do |group| %>
+      <%= link_to (group) do %>
+        <%= render group %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p class="info">No groups yet.</p>
+  <% end %>
+</div>
+<div class="verb">
+  <%= link_to "New Category", new_group_path, class: 'btn create groups' %>
+</div>

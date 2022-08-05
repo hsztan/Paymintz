@@ -1,0 +1,15 @@
+<div id="<%= dom_id payment %>" class="payment">
+  <div class="icon">
+    <img src="https://picsum.photos/60" alt="randy">
+  </div>
+  <div class="info">
+    <p><%= payment.name %></p>
+    <p class="date"><%=payment.created_at.strftime('%d %b %Y')%></p>
+  </div>
+  <div class="total">
+    <p class="amount"><%= number_to_currency payment.amount %></p>
+    <div class="payment-actions">
+      <%= button_to icon('fa-solid', 'trash'), group_payment_url(group, payment), method: :delete, class: 'btn delete'%>
+    </div>
+  </div>
+</div>
