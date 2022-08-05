@@ -57,4 +57,18 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+  # Gmail SMTP settings for ActionMailer.
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name:      '2c336ab673e7ac',
+    password:       '9aba1da8255694',
+    domain:         'mailtrap.io',
+    address:       'smtp.mailtrap.io',
+    port:          '25',
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end

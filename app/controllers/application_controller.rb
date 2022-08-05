@@ -6,11 +6,6 @@ class ApplicationController < ActionController::Base
     redirect_to splash_path
   end
 
-  def load_and_authorize_resource
-    super
-    redirect_to groups_path, flash: { alert: 'Unathorized.' }
-  end
-
   protected
 
   def update_allowed_parameters
